@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 * {
     border: 0;
     margin: 0;
@@ -12,11 +14,13 @@ div,
 p {
     display: block;
 }
-
+article,
 header,
 section,
 footer {
+    color: $color-04;
     display: block;
+    float: left;
     margin: 0 auto;
     width: 100%;
     padding: 4rem 0;
@@ -28,8 +32,15 @@ section {
 
 .container {
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: math.div(1200, 1200) * 100%;
+    
+    @media (max-width:1199px){
+        max-width: math.div(1200, 1400) * 100%;
+
+    }
+    
 }
+
 
 img {
     width: 100%;
@@ -43,14 +54,14 @@ body {
 }
 
 p {
-    color: $color-#363630;
+    color: $color-01;
     font-size: $font-normal;
     margin-bottom: $mb;
     text-align: $align;
 }
 
 h1 {
-    color: $color-01;
+   
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: $font-big;
     margin-top: $mt-02;
